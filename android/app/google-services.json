@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "60088779804",
+    "project_id": "codempire-task-flutter",
+    "storage_bucket": "codempire-task-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:60088779804:android:dadde25029d4044d480bd9",
+        "android_client_info": {
+          "package_name": "com.example.codempire_task"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "60088779804-bgvu4994o63vok7tslilmt75v72git6q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0y2yvT_iyo3Y82gxg2gopncMPHl6hm8I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "60088779804-bgvu4994o63vok7tslilmt75v72git6q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "60088779804-uoa67r910kq6r933mo5f8sniu55d727s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.codempireTask"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
