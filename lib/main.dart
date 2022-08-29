@@ -1,11 +1,9 @@
-import 'package:codempire_task/firebase_options.dart';
-import 'package:codempire_task/services/routes.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-
-// Import the firebase_app_check plugin
-import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:flutter/services.dart';
+import 'package:firebase_core/firebase_core.dart';
+
+import 'package:codempire_task/services/routes.dart';
+import 'package:codempire_task/firebase_options.dart';
 
 void main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
