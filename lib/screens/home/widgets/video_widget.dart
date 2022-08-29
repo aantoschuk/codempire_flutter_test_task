@@ -1,7 +1,12 @@
+import 'dart:io';
+
+import 'package:codempire_task/model/model.dart';
+import 'package:codempire_task/services/routes.dart';
 import 'package:flutter/material.dart';
 
 import 'package:codempire_task/theme/colors.dart';
 import 'package:flutter/services.dart';
+import 'package:image_picker/image_picker.dart';
 
 class VideoWidget extends StatefulWidget {
   const VideoWidget({Key? key}) : super(key: key);
@@ -14,6 +19,8 @@ class VideoWidgetState extends State<VideoWidget>
     with TickerProviderStateMixin {
   late Animation<double> _animation;
   late AnimationController _animController;
+
+  final ImagePicker _picker = ImagePicker();
 
   @override
   initState() {
@@ -32,6 +39,13 @@ class VideoWidgetState extends State<VideoWidget>
     super.dispose();
   }
 
+  void pickVideo() {
+    _picker.pickVideo(source: ImageSource.camera).then((value) {
+      Navigator.pushNamed(context, Routes.view,
+          arguments: ViewPageProps(video: File(value!.path)));
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -42,8 +56,11 @@ class VideoWidgetState extends State<VideoWidget>
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(
-            'assets/images/video.png',
+          GestureDetector(
+            onTap: pickVideo,
+            child: Image.asset(
+              'assets/images/video.png',
+            ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
