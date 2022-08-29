@@ -5,13 +5,13 @@ import 'package:geolocator/geolocator.dart';
 
 import 'package:codempire_task/screens/view_page/widgets/widgets.dart';
 
-import 'package:codempire_task/theme/colors.dart';
-
 class MainWidget extends StatefulWidget {
   final File? photo;
+  final File? video;
   static const routeName = '/view';
 
-  const MainWidget({Key? key, required this.photo}) : super(key: key);
+  const MainWidget({Key? key, required this.photo, this.video})
+      : super(key: key);
 
   @override
   State<StatefulWidget> createState() => MainWidgetState();
@@ -76,31 +76,11 @@ class MainWidgetState extends State<MainWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: double.infinity,
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: CustomColors.dimWhite,
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 30),
-        child: Column(
-          children: [
-            ImageWidget(photo: widget.photo!),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Text(currentLocation != null
-                    ? currentLocation![0].country.toString()
-                    : 'No location'),
-                Text(currentLocation != null
-                    ? currentLocation![0].locality.toString()
-                    : 'No location')
-              ],
-            )
-          ],
-        ),
-      ),
-    );
+    if (widget.photo != null) {
+      return ImagePart(photo: widget.photo!);
+    } else if (widget.video != null) {
+      return VideoPart(video: widget.video!);
+    }
+    return const Text('nothing');
   }
 }

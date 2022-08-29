@@ -2,5 +2,6 @@ import 'dart:io';
 
 class ViewPageProps {
   File? photo;
-  ViewPageProps({this.photo});
+  File? video;
+  ViewPageProps({this.photo, this.video});
 }

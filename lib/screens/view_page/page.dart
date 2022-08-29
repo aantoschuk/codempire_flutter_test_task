@@ -20,6 +20,7 @@ class ViewPage extends StatelessWidget {
     return Scaffold(
       body: MainWidget(
         photo: args.photo,
+        video: args.video,
       ),
     );
   }
