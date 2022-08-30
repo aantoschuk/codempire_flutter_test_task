@@ -47,22 +47,52 @@ class VideoPartState extends State<VideoPart> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Center(
-          child: _controller.value.isInitialized
-              ? AspectRatio(
+    return SizedBox(
+      width: double.infinity,
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          _controller.value.isInitialized
+              ? buildFullScreen(AspectRatio(
                   aspectRatio: _controller.value.aspectRatio,
                   child: VideoPlayer(_controller),
-                )
+                ))
               : Container(),
-        ),
-        GestureDetector(
-          onTap: playVideo,
-          child:
-              isPlayin ? const Icon(Icons.pause) : const Icon(Icons.play_arrow),
-        ),
-      ],
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Row(
+              children: [
+                playButton(),
+                Expanded(child: indicator()),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
+
+  GestureDetector playButton() {
+    return GestureDetector(
+      onTap: playVideo,
+      child: isPlayin ? const Icon(Icons.pause) : const Icon(Icons.play_arrow),
+    );
+  }
+
+  buildFullScreen(AspectRatio aspectRatio) {
+    final size = _controller.value.size;
+    return FittedBox(
+      fit: BoxFit.cover,
+      child: SizedBox(
+        width: size.width,
+        height: size.height,
+        child: aspectRatio,
+      ),
+    );
+  }
+
+  Widget indicator() =>
+      VideoProgressIndicator(_controller, allowScrubbing: true);
 }

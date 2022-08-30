@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
@@ -19,10 +20,18 @@ class MainWidget extends StatefulWidget {
 
 class MainWidgetState extends State<MainWidget> {
   List<Placemark>? currentLocation;
+  String? fcmToken;
+  void getFCMToken() async {
+    final token = await FirebaseMessaging.instance.getToken();
+    setState(() {
+      fcmToken = token;
+    });
+  }
 
   @override
   void initState() {
     super.initState();
+    getFCMToken();
     _determinePosition();
   }
 
