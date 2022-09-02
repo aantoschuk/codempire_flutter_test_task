@@ -54,7 +54,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyC0y2yvT_iyo3Y82gxg2gopncMPHl6hm8I',
+    apiKey: 'AIzaSyCHzkoaSUrM0PRXyS5HK-xHR8GBBLhcr7o',
     appId: '1:60088779804:android:dadde25029d4044d480bd9',
     messagingSenderId: '60088779804',
     projectId: 'codempire-task-flutter',
