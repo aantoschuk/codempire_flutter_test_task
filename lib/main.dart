@@ -46,17 +46,13 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  // final RemoteMessage? message;
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    // ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-    //   content: Text(message!.notification.toString()),
-    // ));
     precacheImage(const AssetImage('assets/images/photo.png'), context);
     precacheImage(const AssetImage('assets/images/video.png'), context);
+    precacheImage(const AssetImage('assets/images/notification.jpg'), context);
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(

@@ -43,7 +43,7 @@ class PhotoWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Зняти відео',
+              'Зробити фото',
               style: TextStyle(
                   color: CustomColors.mignightGreen,
                   fontSize: 20,
@@ -57,7 +57,7 @@ class PhotoWidget extends StatelessWidget {
               ),
             ),
           ],
-        )
+        ),
       ],
     );
   }

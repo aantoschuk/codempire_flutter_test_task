@@ -66,18 +66,25 @@ class VideoWidgetState extends State<VideoWidget>
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 0, right: 10),
+                padding: const EdgeInsets.only(top: 5, right: 10),
                 child: Icon(
                   Icons.arrow_circle_left_outlined,
                   color: CustomColors.illuminatingEmerald,
                 ),
               ),
               Text(
-                'Зробити фото',
+                'Зняти відео',
                 style: TextStyle(
                     color: CustomColors.illuminatingEmerald,
                     fontSize: 20,
                     fontWeight: FontWeight.bold),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 5, left: 10),
+                child: Icon(
+                  Icons.arrow_circle_right_outlined,
+                  color: CustomColors.illuminatingEmerald,
+                ),
               ),
             ],
           )
