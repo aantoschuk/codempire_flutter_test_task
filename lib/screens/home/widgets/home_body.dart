@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:codempire_task/services/vibration.dart';
 import 'package:flutter/material.dart';
 
@@ -20,20 +22,32 @@ class HomeBodyState extends State<HomeBody> {
     int sensitivity = 8;
     if (details.velocity.pixelsPerSecond.dx < -sensitivity) {
       vibrate();
-      if (currentIndex == 0) {
-        setState(() {
-          currentColor = Colors.white;
-          currentIndex = 1;
-        });
-      }
+      if (currentIndex == 2) return;
+      setState(() {
+        currentIndex = currentIndex + 1;
+      });
     } else if (details.velocity.pixelsPerSecond.dx > sensitivity) {
       vibrate();
-      if (currentIndex == 1) {
-        setState(() {
-          currentColor = CustomColors.cadetBlue;
-          currentIndex = 0;
-        });
-      }
+      if (currentIndex == 0) return;
+      setState(() {
+        currentIndex = currentIndex - 1;
+      });
+    }
+    switch (currentIndex) {
+      case 0:
+        {
+          setState(() {
+            currentColor = CustomColors.cadetBlue;
+          });
+        }
+        break;
+      case 1:
+        {
+          setState(() {
+            currentColor = Colors.white;
+          });
+        }
+        break;
     }
   }
 
@@ -41,7 +55,21 @@ class HomeBodyState extends State<HomeBody> {
   Widget build(BuildContext context) {
     return SizedBox.expand(
       child: Container(
-        decoration: BoxDecoration(color: currentColor),
+        decoration: currentIndex != 2
+            ? BoxDecoration(color: currentColor)
+            : BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      CustomColors.crimson,
+                      CustomColors.redMunsell,
+                    ],
+                    stops: const [
+                      0.4,
+                      0.5,
+                    ]),
+              ),
         child: GestureDetector(
           onHorizontalDragEnd: (details) => detectSwipe(details),
           child: Center(
