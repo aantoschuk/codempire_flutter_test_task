@@ -3,15 +3,15 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
-class VideoPart extends StatefulWidget {
+class VideoWidget extends StatefulWidget {
   final File video;
-  const VideoPart({Key? key, required this.video}) : super(key: key);
+  const VideoWidget({Key? key, required this.video}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => VideoPartState();
+  State<StatefulWidget> createState() => _VideoWidgetState();
 }
 
-class VideoPartState extends State<VideoPart> {
+class _VideoWidgetState extends State<VideoWidget> {
   late VideoPlayerController _controller;
   bool isPlayin = false;
 

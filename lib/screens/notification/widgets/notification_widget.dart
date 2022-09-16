@@ -4,14 +4,14 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 
-class NotificationSender extends StatefulWidget {
-  const NotificationSender({Key? key}) : super(key: key);
+class NotificationWidget extends StatefulWidget {
+  const NotificationWidget({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _NotificationSenderState();
+  State<StatefulWidget> createState() => _NotificationWidgetState();
 }
 
-class _NotificationSenderState extends State<NotificationSender> {
+class _NotificationWidgetState extends State<NotificationWidget> {
   void sendPushMessage(String body, String title) async {
     final token = await FirebaseMessaging.instance.getToken();
     Future.delayed(const Duration(seconds: 2), () async {

@@ -1,9 +1,9 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 
-class ImageWidget extends StatelessWidget {
+class ImageContainerWidget extends StatelessWidget {
   final File photo;
-  const ImageWidget({Key? key, required this.photo}) : super(key: key);
+  const ImageContainerWidget({Key? key, required this.photo}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

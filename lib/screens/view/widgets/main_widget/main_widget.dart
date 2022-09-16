@@ -1,10 +1,10 @@
 import 'dart:io';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
-import 'package:geolocator/geolocator.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
-import 'package:codempire_task/screens/view_page/widgets/widgets.dart';
+import 'package:codempire_task/screens/view/widgets/main_widget/video_widget.dart';
+import 'package:codempire_task/screens/view/widgets/main_widget/image_widget.dart';
 
 class MainWidget extends StatefulWidget {
   final File? photo;
@@ -37,9 +37,9 @@ class MainWidgetState extends State<MainWidget> {
   @override
   Widget build(BuildContext context) {
     if (widget.photo != null) {
-      return ImagePart(photo: widget.photo!);
+      return ImageWidget(photo: widget.photo!);
     } else if (widget.video != null) {
-      return VideoPart(video: widget.video!);
+      return VideoWidget(video: widget.video!);
     }
     return const Text('nothing');
   }

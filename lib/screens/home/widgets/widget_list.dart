@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:codempire_task/screens/home/widgets/photo_widget.dart';
-import 'package:codempire_task/screens/home/widgets/video_widget.dart';
-import 'package:codempire_task/screens/home/widgets/notification_widget.dart';
+import 'package:codempire_task/screens/home/widgets/slides/slides.dart';
 
 Widget getAction({required int index}) {
   final widgets = [
