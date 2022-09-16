@@ -1,9 +1,10 @@
 import 'dart:io';
-import 'package:codempire_task/screens/view_page/main_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:codempire_task/model/model.dart';
+
+import 'package:codempire_task/screens/view/widgets/widgets.dart';
 
 class ViewPage extends StatelessWidget {
   final File? photo;

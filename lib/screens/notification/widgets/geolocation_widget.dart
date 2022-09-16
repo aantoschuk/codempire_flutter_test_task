@@ -67,7 +67,7 @@ class GeolocationWidget extends StatelessWidget {
               ],
             );
           } else if (snapshot.hasError) {
-            return Text('error');
+            return const Text('error');
           } else {
             return const CircularProgressIndicator();
           }

@@ -1,11 +1,10 @@
-import 'dart:developer';
-
-import 'package:codempire_task/services/vibration.dart';
 import 'package:flutter/material.dart';
 
-import 'package:codempire_task/screens/home/widgets/widgets.dart';
+import 'package:codempire_task/services/vibration.dart';
 
 import 'package:codempire_task/theme/colors.dart';
+
+import './widget_list.dart';
 
 class HomeBody extends StatefulWidget {
   const HomeBody({Key? key}) : super(key: key);

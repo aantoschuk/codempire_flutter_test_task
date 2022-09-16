@@ -1,13 +1,13 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 
-import 'package:codempire_task/screens/view_page/widgets/image_widget.dart';
+import 'package:codempire_task/screens/view/widgets/main_widget/image_container_widget.dart';
 
 import 'package:codempire_task/theme/colors.dart';
 
-class ImagePart extends StatelessWidget {
+class ImageWidget extends StatelessWidget {
   final File photo;
-  const ImagePart({
+  const ImageWidget({
     Key? key,
     required this.photo,
   }) : super(key: key);
@@ -24,7 +24,7 @@ class ImagePart extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 30),
         child: Column(
           children: [
-            ImageWidget(photo: photo),
+            ImageContainerWidget(photo: photo),
           ],
         ),
       ),
